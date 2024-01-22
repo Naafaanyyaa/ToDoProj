@@ -1,0 +1,37 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model ToDo.BLL.Models.Request.RegistrationRequest
+
+<div>
+    <form method="post" asp-controller="User" asp-action="Register">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="mb-3">
+            <label asp-for="Firstname" class="form-label"></label><br />
+            <input asp-for="Firstname" class="form-control" />
+            <span asp-validation-for="Firstname" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Lastname" class="form-label"></label><br />
+            <input asp-for="Lastname" class="form-control" />
+            <span asp-validation-for="Lastname" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="UserName" class="form-label"></label><br />
+            <input asp-for="UserName" class="form-control" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Password" class="form-label"></label><br />
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label"></label><br />
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <input type="submit" value="Register" class="btn btn-primary" />
+        </div>
+    </form>
+    <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Login">Already have an account?</a>
+</div>

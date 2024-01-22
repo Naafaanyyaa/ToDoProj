@@ -1,0 +1,25 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model System.Collections.Generic.List<ToDo.BLL.Models.Response.TaskResponse>;
+@{
+    ViewData["Title"] = "Notes Page";
+}
+
+<div class="note-header">
+    <h1>My notes</h1>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+    {
+        @Html.TextBox("additionalSearch")
+        <input type="submit" value="submit" />
+    }
+</div>
+@foreach (var note in Model)
+{
+    <div class="wrapper">
+        <div class="content">
+            <div class="title">@Html.DisplayName(note.Title)</div>
+        </div>
+        <div class="content">
+            <div class="title">@Html.DisplayName(note.Description)</div>
+        </div>
+    </div>
+}

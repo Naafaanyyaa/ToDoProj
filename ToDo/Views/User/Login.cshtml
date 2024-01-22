@@ -1,0 +1,23 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model ToDo.BLL.Models.Request.LoginRequest
+
+
+<div>
+    <form method="post" asp-controller="User" asp-action="Login">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="mb-3">
+            <label asp-for="UserName" class="form-label"></label><br />
+            <input asp-for="UserName" class="form-control" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Password" class="form-label"></label><br />
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <input type="submit" value="Login" class="btn btn-primary" />
+        </div>
+    </form>
+    <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Register">Don't have an account?</a>
+</div>
